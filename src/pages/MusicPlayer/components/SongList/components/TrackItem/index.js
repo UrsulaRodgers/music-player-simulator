@@ -40,7 +40,9 @@ const TrackItem = props => {
           </p>
         </Grid>
         <Grid item xs={2} className="trackitem_duration">
-          <p className="trackitem_duration_text">{duration}</p>
+          <p className="trackitem_duration_text" data-testid="track-duration">
+            {duration}
+          </p>
         </Grid>
         <Grid item xs={2} className="trackitem_icon">
           {renderIcon(selected, isPlaying)}

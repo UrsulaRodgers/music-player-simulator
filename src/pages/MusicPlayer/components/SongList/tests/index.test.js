@@ -23,6 +23,10 @@ describe("<SongList />", () => {
     const { getByTestId } = renderSongList();
     expect(getByTestId("track-item")).toBeInTheDocument();
   });
+  it("renders track duration", () => {
+    const { getByTestId } = renderSongList();
+    expect(getByTestId("track-duration")).toBeInTheDocument();
+  });
   it("renders a play icon when a track is not playing", () => {
     const { getByTestId } = renderSongList();
     expect(getByTestId("play-icon")).toBeInTheDocument();
