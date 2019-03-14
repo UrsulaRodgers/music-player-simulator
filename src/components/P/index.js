@@ -4,11 +4,12 @@ import Typography from "@material-ui/core/Typography";
 import { colors } from "../../theme";
 
 const P = props => {
-  const { children, bold, color, testID, style } = props;
+  const { children, bold, color, testID, style, italics } = props;
   const styles = {
     fontSize: "16px",
     lineHeight: "18px",
     fontWeight: bold ? "bold" : "normal",
+    fontStyle: italics ? "italic" : "normal",
     color,
     ...style
   };

@@ -1,17 +1,35 @@
 import React from "react";
-import { Grid } from "../../../../components";
+import { connect } from "react-redux";
+import { Grid, H1 } from "../../../../components";
+import { CurrentTrack, PlayerControls } from "./components";
 
 const styles = {
   pageLayout: {
     width: "70%",
-    border: "1px solid red",
-    minHeight: "100vh"
+    minHeight: "100vh",
+    paddingBottom: 50
   }
 };
-const PlayerArea = () => (
-  <Grid container style={styles.pageLayout}>
-    Stuff
-  </Grid>
-);
+const PlayerArea = props => {
+  const { playList, selectedTrack } = props;
 
-export default PlayerArea;
+  return (
+    <Grid
+      container
+      alignItems="center"
+      justify="space-evenly"
+      direction="column"
+      style={styles.pageLayout}
+    >
+      {selectedTrack && <H1>Now Playing</H1>}
+      <CurrentTrack playList={playList} selectedTrack={selectedTrack} />
+      <PlayerControls selectedTrack={selectedTrack} />
+    </Grid>
+  );
+};
+
+const mapStateToProps = state => ({
+  selectedTrack: state.selectedTrack
+});
+
+export default connect(mapStateToProps)(PlayerArea);

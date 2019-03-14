@@ -11,5 +11,6 @@ export const colors = {
   pageWrapperBody: palette.palette03,
   textHover: palette.palette02,
   pageDivider: palette.palette02,
-  songDivider: palette.palette04
+  songDivider: palette.palette04,
+  selectedTrack: palette.palette02
 };

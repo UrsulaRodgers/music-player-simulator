@@ -8,10 +8,15 @@ const styles = {
 };
 
 const TrackItemWrapper = props => {
-  const { children, testID } = props;
+  const { children, testID, onClick, selected } = props;
 
   return (
-    <StyledDiv data-testid={testID} style={styles}>
+    <StyledDiv
+      data-testid={testID}
+      style={styles}
+      onClick={onClick}
+      selected={selected}
+    >
       {children}
     </StyledDiv>
   );
