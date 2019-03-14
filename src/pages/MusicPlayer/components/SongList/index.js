@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { playList } from "../../../../data";
 import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
 import { Grid, H1 } from "../../../../components_shared";
 import { colors } from "../../../../theme";
@@ -45,8 +46,6 @@ const handleClick = (index, props) => {
 };
 
 const SongList = props => {
-  const { playList } = props;
-
   return (
     <Grid item style={styles.pageLayout}>
       <Grid item style={styles.title}>

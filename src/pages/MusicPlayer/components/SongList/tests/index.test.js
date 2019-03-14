@@ -1,21 +1,11 @@
 import React from "react";
-// import { renderWithRedux } from "../../../utils/testutils";
-import {
-  render,
-  fireEvent,
-  waitForElement,
-  cleanup
-} from "react-testing-library";
+import { renderWithRedux } from "../../../../../utils/testUtils";
+import { fireEvent, waitForElement, cleanup } from "react-testing-library";
 import "jest-dom/extend-expect";
-// import { getMovieListError } from "../../../store/actions";
 import SongList from "../";
 
-// const renderSearchPage = () => {
-//   return renderWithRedux(<SearchPage />);
-// };
-
 const renderSongList = () => {
-  return render(<SongList />);
+  return renderWithRedux(<SongList />);
 };
 
 afterEach(cleanup);
@@ -32,5 +22,16 @@ describe("<SongList />", () => {
   it("renders an individual track", () => {
     const { getByTestId } = renderSongList();
     expect(getByTestId("track-item")).toBeInTheDocument();
+  });
+  it("renders a play icon when a track is not playing", () => {
+    const { getByTestId } = renderSongList();
+    expect(getByTestId("play-icon")).toBeInTheDocument();
+  });
+  it("renders a pause icon when a track is playing", async () => {
+    const { getByTestId } = renderSongList();
+    const TrackItem = getByTestId("track-item");
+    fireEvent.click(TrackItem);
+    const pauseIcon = await waitForElement(() => getByTestId("pause-icon"));
+    expect(pauseIcon).toBeInTheDocument();
   });
 });

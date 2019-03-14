@@ -18,9 +18,9 @@ const styles = {
 
 const renderIcon = (selected, isPlaying) =>
   selected && isPlaying ? (
-    <img src={pauseIcon} alt="pause-icon" />
+    <img src={pauseIcon} alt="pause-icon" data-testid="pause-icon" />
   ) : (
-    <img src={playIcon} alt="play-icon" />
+    <img src={playIcon} alt="play-icon" data-testid="play-icon" />
   );
 
 const TrackItem = props => {

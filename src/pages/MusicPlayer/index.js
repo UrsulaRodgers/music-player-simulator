@@ -5,7 +5,7 @@ import { SongList, PlayerArea } from "./components";
 
 const MusicPlayer = () => (
   <PageWrapper>
-    <SongList playList={playList} />
+    <SongList />
     <PlayerArea playList={playList} />
   </PageWrapper>
 );
