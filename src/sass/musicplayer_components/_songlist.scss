@@ -1,0 +1,15 @@
+.songlist_pagelayout {
+  border-right: 2px solid $color-primary-red;
+  min-height: 100vh;
+
+  @include phone-large {
+    border: none;
+    min-height: 50vh;
+  }
+}
+
+.songlist_title {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}

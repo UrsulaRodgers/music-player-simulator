@@ -1,0 +1,26 @@
+.currentttrack_wrapper {
+  text-align: center;
+}
+.currenttrack_songtitle {
+  color: $color-primary-text;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+.currenttrack_albumart {
+  width: 300px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @include phone-large {
+    width: 250px;
+    height: auto;
+  }
+}
+.currenttrack_artist_album {
+  color: $color-primary-text;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 40px;
+}

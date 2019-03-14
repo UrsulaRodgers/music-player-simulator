@@ -4,18 +4,6 @@ import { playPrevTrack } from "../../../../../../../../store/actions";
 import { Button } from "../../../../../../../../components_shared";
 import prevIcon from "../../../../../../assets/baseline-fast_rewind-24px.svg";
 
-const styles = {
-  button: {
-    width: "80%",
-    height: "auto"
-  },
-  disabledButton: {
-    width: "80%",
-    height: "auto",
-    opacity: 0.5
-  }
-};
-
 const PrevButton = props => {
   const { dispatchPlayPrevTrack, index } = props;
 
@@ -24,11 +12,15 @@ const PrevButton = props => {
       onClick={index => dispatchPlayPrevTrack(index)}
       data-testid="prev-button"
     >
-      <img src={prevIcon} alt="prev-button" style={styles.button} />
+      <img className="small_button-icon" src={prevIcon} alt="prev-button" />
     </Button>
   ) : (
     <Button disabled data-testid="prev-button-disabled">
-      <img src={prevIcon} alt="prev-button" style={styles.disabledButton} />
+      <img
+        className="small_button-icon-disabled"
+        src={prevIcon}
+        alt="prev-button"
+      />
     </Button>
   );
 };

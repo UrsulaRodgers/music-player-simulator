@@ -8,6 +8,8 @@ const StyledDiv = styled.div`
   }
   background-color: ${props =>
     props.selected ? colors.selectedTrack : "none"};
+  border-bottom: 1px solid ${colors.songDivider};
+  padding: 10px;
 `;
 
 export default StyledDiv;

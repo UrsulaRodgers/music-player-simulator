@@ -1,22 +1,19 @@
 import React from "react";
-import { P, Grid } from "../../../../../../../../components_shared";
-
-const styles = {
-  span: {
-    display: "flex",
-    justifyContent: "center"
-  }
-};
+import { Grid } from "../../../../../../../../components_shared";
 
 const renderTrackLength = selectedTrack => {
-  return selectedTrack ? <P>{selectedTrack.length}</P> : <P>0:00</P>;
+  return selectedTrack ? (
+    <p className="playprogress_text">{selectedTrack.length}</p>
+  ) : (
+    <p className="playprogress_text">0:00</p>
+  );
 };
 
 const PlayProgress = props => {
   const { selectedTrack } = props;
   return (
-    <Grid style={styles.span} data-testid="track-progress">
-      <P>0:00 /</P>
+    <Grid className="playercontrols_play_progress" data-testid="track-progress">
+      <p className="playprogress_text">0:00 /</p>
       &nbsp;{renderTrackLength(selectedTrack)}
     </Grid>
   );

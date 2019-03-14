@@ -5,19 +5,7 @@ import { Button } from "../../../../../../../../components_shared";
 import nextIcon from "../../../../../../assets/baseline-fast_forward-24px.svg";
 import { playList } from "../../../../../../../../data";
 
-const styles = {
-  button: {
-    width: "80%",
-    height: "auto"
-  },
-  disabledButton: {
-    width: "80%",
-    height: "auto",
-    opacity: 0.5
-  }
-};
-
-const PlayButton = props => {
+const NextButton = props => {
   const { dispatchPlayNextTrack, index } = props;
 
   return index < playList.length - 1 ? (
@@ -25,11 +13,15 @@ const PlayButton = props => {
       onClick={index => dispatchPlayNextTrack(index)}
       data-testid="next-button"
     >
-      <img src={nextIcon} alt="next-button" style={styles.button} />
+      <img className="small_button-icon" src={nextIcon} alt="next-button" />
     </Button>
   ) : (
     <Button disabled data-testid="next-button-disabled">
-      <img src={nextIcon} alt="next-button" style={styles.disabledButton} />
+      <img
+        className="small_button-icon-disabled"
+        src={nextIcon}
+        alt="next-button"
+      />
     </Button>
   );
 };
@@ -46,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayButton);
+)(NextButton);

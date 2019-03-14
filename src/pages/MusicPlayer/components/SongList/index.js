@@ -2,22 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { playList } from "../../../../data";
 import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
-import { Grid, H1 } from "../../../../components_shared";
-import { colors } from "../../../../theme";
+import { Grid } from "../../../../components_shared";
 import { TrackItem } from "./components";
-
-const styles = {
-  pageLayout: {
-    width: "30%",
-    borderRight: `2px solid ${colors.pageDivider}`,
-    minHeight: "100vh"
-  },
-  title: {
-    textAlign: "center",
-    padding: 10,
-    marginBottom: 20
-  }
-};
 
 const renderPlayList = (playList, props) =>
   playList.map((track, index) => (
@@ -45,18 +31,18 @@ const handleClick = (index, props) => {
     : dispatchSelectedTrack(index);
 };
 
-const SongList = props => {
-  return (
-    <Grid item style={styles.pageLayout}>
-      <Grid item style={styles.title}>
-        <H1 testID="playlist-title">Your Playlist</H1>
-      </Grid>
-      <Grid item data-testid="user-playlist">
-        {renderPlayList(playList, props)}
-      </Grid>
+const SongList = props => (
+  <Grid className="songlist_pagelayout" item xs={12} sm={6} md={4}>
+    <Grid item className="songlist_title">
+      <h1 className="header" data-testid="playlist-title">
+        Your Playlist
+      </h1>
     </Grid>
-  );
-};
+    <Grid item data-testid="user-playlist">
+      {renderPlayList(playList, props)}
+    </Grid>
+  </Grid>
+);
 
 const mapStateToProps = state => ({
   selectedTrack: state.selectedTrack,

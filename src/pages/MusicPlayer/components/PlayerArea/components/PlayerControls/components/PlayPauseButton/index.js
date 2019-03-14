@@ -8,16 +8,9 @@ import { Button } from "../../../../../../../../components_shared";
 import playIcon from "../../../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../../../assets/baseline-pause-24px.svg";
 
-const styles = {
-  button: {
-    width: "90%",
-    height: "auto"
-  }
-};
-
 const renderPlayButton = dispatchPlaySelectedTrack => (
   <Button onClick={() => dispatchPlaySelectedTrack()} data-testid="play-button">
-    <img src={playIcon} alt="play-button" style={styles.button} />
+    <img className="large_button-icon" src={playIcon} alt="play-button" />
   </Button>
 );
 
@@ -26,7 +19,7 @@ const renderPauseButton = dispatchPauseSelectedTrack => (
     onClick={() => dispatchPauseSelectedTrack()}
     data-testid="pause-button"
   >
-    <img src={pauseIcon} alt="pause-button" style={styles.button} />
+    <img className="large_button-icon" src={pauseIcon} alt="pause-button" />
   </Button>
 );
 

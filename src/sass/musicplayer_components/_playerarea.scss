@@ -1,0 +1,12 @@
+.playerarea_pagelayout {
+  min-height: 100vh;
+  padding-bottom: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+  direction: column;
+  padding-top: 50px;
+
+  @include phone-large {
+    padding-top: 0;
+  }
+}

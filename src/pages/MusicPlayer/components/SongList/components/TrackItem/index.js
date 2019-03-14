@@ -1,20 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { P, Grid } from "../../../../../../components_shared";
+import { Grid } from "../../../../../../components_shared";
 import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../assets/baseline-pause-24px.svg";
-
-const styles = {
-  trackTitle: {
-    marginBottom: 5
-  },
-  icon: {
-    display: "flex",
-    justifyContent: "center"
-  }
-};
 
 const renderIcon = (selected, isPlaying) =>
   selected && isPlaying ? (
@@ -39,16 +29,16 @@ const TrackItem = props => {
     <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
       <Grid container justify="space-between">
         <Grid item>
-          <P style={styles.trackTitle}>
+          <p className="trackitem_title">
             <i>
               {trackNumber}. {title}
             </i>
-          </P>
-          <P>
+          </p>
+          <p className="trackItem_artist_album">
             {artist} ({album})
-          </P>
+          </p>
         </Grid>
-        <Grid item style={styles.icon}>
+        <Grid item className="trackitem_icon">
           {renderIcon(selected, isPlaying)}
         </Grid>
       </Grid>
