@@ -17,6 +17,7 @@ const TrackItem = props => {
   const {
     trackNumber,
     title,
+    duration,
     artist,
     album,
     testID,
@@ -27,18 +28,21 @@ const TrackItem = props => {
 
   return (
     <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
-      <Grid container justify="space-between">
-        <Grid item>
+      <Grid container justify="space-between" alignItems="center">
+        <Grid item xs={8}>
           <p className="trackitem_title">
             <i>
               {trackNumber}. {title}
             </i>
           </p>
-          <p className="trackItem_artist_album">
+          <p className="trackitem_moreinformation">
             {artist} ({album})
           </p>
         </Grid>
-        <Grid item className="trackitem_icon">
+        <Grid item xs={2} className="trackitem_duration">
+          <p className="trackitem_duration_text">{duration}</p>
+        </Grid>
+        <Grid item xs={2} className="trackitem_icon">
           {renderIcon(selected, isPlaying)}
         </Grid>
       </Grid>

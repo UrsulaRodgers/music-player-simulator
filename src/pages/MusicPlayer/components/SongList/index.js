@@ -12,6 +12,7 @@ const renderPlayList = (playList, props) =>
       trackNumber={index + 1}
       key={track.album}
       title={track.title}
+      duration={track.length}
       artist={track.artist}
       album={track.album}
       testID="track-item"

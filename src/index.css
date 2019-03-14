@@ -48,15 +48,23 @@ code {
   line-height: 18px;
   margin: 0 0 10px 0; }
 
-.trackItem_artist_album {
+.trackitem_moreinformation {
   color: #ffffff;
   font-size: 16px;
   line-height: 18px;
-  margin: 0; }
+  margin: 0;
+  display: flex;
+  direction: row;
+  justify-content: space-between; }
 
-.trackitem_icon {
+.trackitem_icon .trackitem_duration {
   display: flex;
   justify-content: center; }
+
+.trackitem_duration_text {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 18px; }
 
 .currentttrack_wrapper {
   text-align: center; }
