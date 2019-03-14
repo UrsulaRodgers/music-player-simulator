@@ -47,10 +47,15 @@ const TrackItem = props => {
 };
 
 TrackItem.propTypes = {
-  trackNumber: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  artist: PropTypes.string.isRequired,
-  album: PropTypes.string.isRequired
+  selectedTrack: PropTypes.object,
+  isPlaying: PropTypes.bool,
+  trackNumber: PropTypes.number,
+  title: PropTypes.string,
+  artist: PropTypes.string,
+  album: PropTypes.string,
+  testID: PropTypes.string,
+  onClick: PropTypes.func,
+  selected: PropTypes.bool
 };
 
 const mapStateToProps = state => ({

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { playList } from "../../../../data";
 import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
@@ -43,6 +44,14 @@ const SongList = props => (
     </Grid>
   </Grid>
 );
+
+SongList.propTypes = {
+  dispatchSelectedTrack: PropTypes.func,
+  dispatchPauseSelectedTrack: PropTypes.func,
+  selectedTrack: PropTypes.object,
+  currentTrackIndex: PropTypes.number,
+  isPlaying: PropTypes.bool
+};
 
 const mapStateToProps = state => ({
   selectedTrack: state.selectedTrack,

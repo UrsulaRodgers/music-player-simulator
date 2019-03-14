@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid } from "../../../../../../../../components_shared";
 
 const renderTrackLength = selectedTrack => {
@@ -17,6 +18,10 @@ const PlayProgress = props => {
       &nbsp;{renderTrackLength(selectedTrack)}
     </Grid>
   );
+};
+
+PlayProgress.propTypes = {
+  selectedTrack: PropTypes.object
 };
 
 export default PlayProgress;

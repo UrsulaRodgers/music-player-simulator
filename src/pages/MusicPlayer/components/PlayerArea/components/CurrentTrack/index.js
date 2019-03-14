@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid } from "../../../../../../components_shared";
 
 const CurrentTrack = props => {
@@ -25,6 +26,11 @@ const CurrentTrack = props => {
       </Grid>
     )
   );
+};
+
+CurrentTrack.propTypes = {
+  selectedTrack: PropTypes.object,
+  index: PropTypes.number
 };
 
 export default CurrentTrack;

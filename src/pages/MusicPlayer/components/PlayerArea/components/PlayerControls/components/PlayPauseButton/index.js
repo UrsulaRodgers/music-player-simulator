@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import {
   playSelectedTrack,
@@ -33,6 +34,14 @@ const PlayPauseButton = props => {
   return isPlaying
     ? renderPauseButton(dispatchPauseSelectedtrack)
     : renderPlayButton(dispatchPlaySelectedTrack);
+};
+
+PlayPauseButton.propTypes = {
+  dispatchPlaySelectedTrack: PropTypes.func,
+  dispatchPauseSelectedTrack: PropTypes.func,
+  isPlaying: PropTypes.bool,
+  selectedTrack: PropTypes.object,
+  onClick: PropTypes.func
 };
 
 const mapStateToProps = state => ({

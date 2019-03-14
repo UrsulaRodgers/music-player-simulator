@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { playNextTrack } from "../../../../../../../../store/actions";
 import { Button } from "../../../../../../../../components_shared";
@@ -24,6 +25,13 @@ const NextButton = props => {
       />
     </Button>
   );
+};
+
+NextButton.propTypes = {
+  dispatchPlayNextTrack: PropTypes.func,
+  index: PropTypes.number,
+  selectedTrack: PropTypes.object,
+  onClick: PropTypes.func
 };
 
 const mapStateToProps = state => ({

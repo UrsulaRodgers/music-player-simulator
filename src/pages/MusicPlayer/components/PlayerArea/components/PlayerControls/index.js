@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid } from "../../../../../../components_shared";
 import {
   PlayPauseButton,
@@ -24,6 +25,10 @@ const PlayerControls = props => {
       </Grid>
     )
   );
+};
+
+PlayerControls.propTypes = {
+  selectedTrack: PropTypes.object
 };
 
 export default PlayerControls;

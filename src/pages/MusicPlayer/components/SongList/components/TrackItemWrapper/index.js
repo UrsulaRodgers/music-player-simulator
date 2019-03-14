@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { StyledDiv } from "./components";
 
 const TrackItemWrapper = props => {
@@ -9,6 +10,13 @@ const TrackItemWrapper = props => {
       {children}
     </StyledDiv>
   );
+};
+
+TrackItemWrapper.propTypes = {
+  children: PropTypes.node,
+  testID: PropTypes.string,
+  onClick: PropTypes.func,
+  selected: PropTypes.bool
 };
 
 export default TrackItemWrapper;
