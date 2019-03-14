@@ -19,7 +19,7 @@ const styles = {
   }
 };
 const CurrentTrack = props => {
-  const { selectedTrack } = props;
+  const { selectedTrack, index } = props;
 
   return (
     selectedTrack && (
@@ -28,11 +28,12 @@ const CurrentTrack = props => {
           src={selectedTrack.albumArt}
           alt={selectedTrack.album}
           style={styles.albumArt}
+          data-testid="album-art"
         />
-        <P italics style={styles.songTitle}>
+        <P italics style={styles.songTitle} testID={`track-title-${index}`}>
           {selectedTrack.title}
         </P>
-        <P>
+        <P testID="artist-album">
           {selectedTrack.artist} - {selectedTrack.album}
         </P>
       </Grid>

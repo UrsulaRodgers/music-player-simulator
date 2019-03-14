@@ -1,6 +1,11 @@
 import React from "react";
 import { Grid } from "../../../../../../components_shared";
-import { PlayButton, PlayProgress, NextButton, PrevButton } from "./components";
+import {
+  PlayPauseButton,
+  PlayProgress,
+  NextButton,
+  PrevButton
+} from "./components";
 
 const styles = {
   playerWrapper: {
@@ -24,7 +29,7 @@ const PlayerControls = props => {
       <Grid container alignItems="center" justify="center">
         <Grid item style={styles.playerControls}>
           <PrevButton />
-          <PlayButton />
+          <PlayPauseButton />
           <NextButton />
         </Grid>
         <Grid item xs={12}>

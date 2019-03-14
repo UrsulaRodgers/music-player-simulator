@@ -16,18 +16,21 @@ const styles = {
 };
 
 const renderPlayButton = dispatchPlaySelectedTrack => (
-  <Button onClick={() => dispatchPlaySelectedTrack()}>
+  <Button onClick={() => dispatchPlaySelectedTrack()} data-testid="play-button">
     <img src={playIcon} alt="play-button" style={styles.button} />
   </Button>
 );
 
 const renderPauseButton = dispatchPauseSelectedTrack => (
-  <Button onClick={() => dispatchPauseSelectedTrack()}>
+  <Button
+    onClick={() => dispatchPauseSelectedTrack()}
+    data-testid="pause-button"
+  >
     <img src={pauseIcon} alt="pause-button" style={styles.button} />
   </Button>
 );
 
-const PlayButton = props => {
+const PlayPauseButton = props => {
   const {
     dispatchPlaySelectedTrack,
     dispatchPauseSelectedtrack,
@@ -52,4 +55,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayButton);
+)(PlayPauseButton);

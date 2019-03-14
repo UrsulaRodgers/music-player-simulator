@@ -11,7 +11,7 @@ const styles = {
   }
 };
 const PlayerArea = props => {
-  const { playList, selectedTrack } = props;
+  const { playList, selectedTrack, index } = props;
 
   return (
     <Grid
@@ -22,14 +22,19 @@ const PlayerArea = props => {
       style={styles.pageLayout}
     >
       {selectedTrack && <H1>Now Playing</H1>}
-      <CurrentTrack playList={playList} selectedTrack={selectedTrack} />
+      <CurrentTrack
+        playList={playList}
+        selectedTrack={selectedTrack}
+        index={index}
+      />
       <PlayerControls selectedTrack={selectedTrack} />
     </Grid>
   );
 };
 
 const mapStateToProps = state => ({
-  selectedTrack: state.selectedTrack
+  selectedTrack: state.selectedTrack,
+  index: state.trackIndex
 });
 
 export default connect(mapStateToProps)(PlayerArea);

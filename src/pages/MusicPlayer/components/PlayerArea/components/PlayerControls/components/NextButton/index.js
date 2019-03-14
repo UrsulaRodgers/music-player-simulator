@@ -21,11 +21,14 @@ const PlayButton = props => {
   const { dispatchPlayNextTrack, index } = props;
 
   return index < playList.length - 1 ? (
-    <Button onClick={index => dispatchPlayNextTrack(index)}>
+    <Button
+      onClick={index => dispatchPlayNextTrack(index)}
+      data-testid="next-button"
+    >
       <img src={nextIcon} alt="next-button" style={styles.button} />
     </Button>
   ) : (
-    <Button disabled>
+    <Button disabled data-testid="next-button-disabled">
       <img src={nextIcon} alt="next-button" style={styles.disabledButton} />
     </Button>
   );

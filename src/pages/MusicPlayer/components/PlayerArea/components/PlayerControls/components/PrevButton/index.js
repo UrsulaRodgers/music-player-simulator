@@ -20,12 +20,15 @@ const PrevButton = props => {
   const { dispatchPlayPrevTrack, index } = props;
 
   return index > 0 ? (
-    <Button onClick={index => dispatchPlayPrevTrack(index)}>
-      <img src={prevIcon} alt="next-button" style={styles.button} />
+    <Button
+      onClick={index => dispatchPlayPrevTrack(index)}
+      data-testid="prev-button"
+    >
+      <img src={prevIcon} alt="prev-button" style={styles.button} />
     </Button>
   ) : (
-    <Button disabled>
-      <img src={prevIcon} alt="next-button" style={styles.disabledButton} />
+    <Button disabled data-testid="prev-button-disabled">
+      <img src={prevIcon} alt="prev-button" style={styles.disabledButton} />
     </Button>
   );
 };

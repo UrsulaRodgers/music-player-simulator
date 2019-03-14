@@ -15,7 +15,7 @@ const renderTrackLength = selectedTrack => {
 const PlayProgress = props => {
   const { selectedTrack } = props;
   return (
-    <Grid style={styles.span}>
+    <Grid style={styles.span} data-testid="track-progress">
       <P>0:00 /</P>
       &nbsp;{renderTrackLength(selectedTrack)}
     </Grid>
