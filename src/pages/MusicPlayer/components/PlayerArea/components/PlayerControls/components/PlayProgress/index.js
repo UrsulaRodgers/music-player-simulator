@@ -1,5 +1,5 @@
 import React from "react";
-import { P, Grid } from "../../../../../../../../components";
+import { P, Grid } from "../../../../../../../../components_shared";
 
 const styles = {
   span: {

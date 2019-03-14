@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { playNextTrack } from "../../../../../../../../store/actions";
-import { Button } from "../../../../../../../../components";
+import { Button } from "../../../../../../../../components_shared";
 import nextIcon from "../../../../../../assets/baseline-fast_forward-24px.svg";
 import { playList } from "../../../../../../../../data";
 

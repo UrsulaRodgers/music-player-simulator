@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, P } from "../../../../../../components";
+import { Grid, P } from "../../../../../../components_shared";
 
 const styles = {
   currentTrackWrapper: {

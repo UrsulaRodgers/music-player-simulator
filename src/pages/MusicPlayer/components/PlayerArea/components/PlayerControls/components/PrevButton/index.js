@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { playPrevTrack } from "../../../../../../../../store/actions";
-import { Button } from "../../../../../../../../components";
+import { Button } from "../../../../../../../../components_shared";
 import prevIcon from "../../../../../../assets/baseline-fast_rewind-24px.svg";
 
 const styles = {

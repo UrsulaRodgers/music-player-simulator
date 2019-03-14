@@ -4,7 +4,7 @@ import {
   playSelectedTrack,
   pauseSelectedTrack
 } from "../../../../../../../../store/actions";
-import { Button } from "../../../../../../../../components";
+import { Button } from "../../../../../../../../components_shared";
 import playIcon from "../../../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../../../assets/baseline-pause-24px.svg";
 

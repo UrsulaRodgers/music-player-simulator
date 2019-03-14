@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledDiv } from "../../../../../../components";
+import { StyledDiv } from "./components";
 import { colors } from "../../../../../../theme";
 
 const styles = {

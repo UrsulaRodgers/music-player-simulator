@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "../../../../../../components";
+import { Grid } from "../../../../../../components_shared";
 import { PlayButton, PlayProgress, NextButton, PrevButton } from "./components";
 
 const styles = {

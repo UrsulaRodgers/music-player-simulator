@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
-import { Grid, H1 } from "../../../../components";
+import { Grid, H1 } from "../../../../components_shared";
 import { colors } from "../../../../theme";
 import { TrackItem } from "./components";
 

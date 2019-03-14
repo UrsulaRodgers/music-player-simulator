@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, H1 } from "../../../../components";
+import { Grid, H1 } from "../../../../components_shared";
 import { CurrentTrack, PlayerControls } from "./components";
 
 const styles = {

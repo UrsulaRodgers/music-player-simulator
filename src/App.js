@@ -1,10 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { MusicPlayer } from "./pages";
 
-class App extends Component {
-  render() {
-    return <MusicPlayer />;
-  }
-}
+const App = () => <MusicPlayer />;
 
 export default App;

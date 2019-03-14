@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { P, Grid } from "../../../../../../components";
+import { P, Grid } from "../../../../../../components_shared";
 import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../assets/baseline-pause-24px.svg";
