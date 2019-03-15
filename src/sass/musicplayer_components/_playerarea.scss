@@ -6,7 +6,7 @@
   direction: column;
   padding-top: 50px;
 
-  @include phone-large {
+  @include tablet {
     padding-top: 0;
   }
 }

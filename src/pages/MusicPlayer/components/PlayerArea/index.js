@@ -7,7 +7,7 @@ const PlayerArea = props => {
   const { playList, selectedTrack, index } = props;
 
   return (
-    <Grid className="playerarea_pagelayout" item xs={12} sm={6} md={8}>
+    <Grid className="playerarea_pagelayout" item xs={12} md={8}>
       {selectedTrack && <h1 className="header">Now Playing</h1>}
       <CurrentTrack
         playList={playList}

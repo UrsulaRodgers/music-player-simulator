@@ -22,7 +22,7 @@ Unit tests have been written using react-testing-library. The components for whi
 
 A `src/utils` folder was created to house the `renderWithRedux` function, allowing it to be used in more than one set of tests.
 
-Please run `npm run test`.
+Please run `npm run test`. There are two test suites in this app. If only one is run, press `w` then `a` in the terminal to run all tests.
 
 ## Available Scripts
 

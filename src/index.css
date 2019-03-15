@@ -21,7 +21,7 @@ code {
 .songlist_pagelayout {
   border-right: 2px solid #d61515;
   min-height: 100vh; }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .songlist_pagelayout {
       border: none;
       min-height: 50vh; } }
@@ -38,7 +38,7 @@ code {
   justify-content: space-evenly;
   direction: column;
   padding-top: 50px; }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .playerarea_pagelayout {
       padding-top: 0; } }
 
@@ -80,7 +80,7 @@ code {
   height: auto;
   margin-top: 20px;
   margin-bottom: 20px; }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .currenttrack_albumart {
       width: 250px;
       height: auto; } }
