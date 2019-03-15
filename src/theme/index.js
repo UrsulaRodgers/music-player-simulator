@@ -1,7 +1,7 @@
 const palette = {
   palette01: "#d61515",
   palette02: "#a39e9e",
-  palette03: "#5A6375"
+  palette03: "#0412E2"
 };
 
 export const colors = {

@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { playNextTrack } from "../../../../../../../../store/actions";
 import { Button } from "../../../../../../../../components_shared";
 import nextIcon from "../../../../../../assets/baseline-fast_forward-24px.svg";
 import { playList } from "../../../../../../../../data";
@@ -34,16 +32,4 @@ NextButton.propTypes = {
   onClick: PropTypes.func
 };
 
-const mapStateToProps = state => ({
-  index: state.trackIndex,
-  selectedTrack: state.selectedTrack
-});
-
-const mapDispatchToProps = dispatch => ({
-  dispatchPlayNextTrack: () => dispatch(playNextTrack())
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NextButton);
+export default NextButton;

@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { playPrevTrack } from "../../../../../../../../store/actions";
 import { Button } from "../../../../../../../../components_shared";
 import prevIcon from "../../../../../../assets/baseline-fast_rewind-24px.svg";
 
@@ -33,16 +31,4 @@ PrevButton.propTypes = {
   onClick: PropTypes.func
 };
 
-const mapStateToProps = state => ({
-  index: state.trackIndex,
-  selectedTrack: state.selectedTrack
-});
-
-const mapDispatchToProps = dispatch => ({
-  dispatchPlayPrevTrack: () => dispatch(playPrevTrack())
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PrevButton);
+export default PrevButton;

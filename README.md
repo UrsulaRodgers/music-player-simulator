@@ -1,14 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Notes on the App
+## Notes on the Music Player app
 
 ### Structure
 
-A `components_shared` folder has been created which houses any shared components used throughout the app. Otherwise, child components are stored locally to the parent component.
+A `src/components_shared` folder has been created which houses any shared components used throughout the app. Otherwise, child components are stored locally to their parent components.
+
+### Redux
+
+Please see the `src/store` for the definitions of actionTypes, actions and reducer used throughout the app.
 
 ### Styling
 
-Please note that this app uses different styling approaches. Most styles are injected via Sass. However, where props are required to inform specific style attributes, styled components have been used (for example, see the `StyledDiv` component: `pages/MusicPlayer/SongList/TrackItemWrapper/StyledDiv`).
+Please note that this app uses different styling approaches. Most styles are injected via Sass. However, where props are required to inform specific style attributes, styled components have been used (for example, see the `StyledDiv` component: `src/pages/MusicPlayer/SongList/TrackItemWrapper/StyledDiv`).
 
 The `components_shared` folder houses a `Grid` and a `Button` component, which utilise pre-built components from the `material-ui` library for React. These components can receive props which affect presentation or function. For example the `Grid` can receive props which allow the app to be responsive, and is based on Flexbox.
 
@@ -16,7 +20,7 @@ The `components_shared` folder houses a `Grid` and a `Button` component, which u
 
 Unit tests have been written using react-testing-library. The components for which tests have been written are the `SongList` and `PlayerArea` components, which also tests for the presentation of the elements from their child components in the ui.
 
-A utils folder was created to house the `renderWithRedux` function, allowing it to be used in more than one set of tests.
+A `src/utils` folder was created to house the `renderWithRedux` function, allowing it to be used in more than one set of tests.
 
 Please run `npm run test`.
 

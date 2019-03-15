@@ -1,10 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import {
-  playSelectedTrack,
-  pauseSelectedTrack
-} from "../../../../../../../../store/actions";
 import { Button } from "../../../../../../../../components_shared";
 import playIcon from "../../../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../../../assets/baseline-pause-24px.svg";
@@ -40,21 +35,7 @@ PlayPauseButton.propTypes = {
   dispatchPlaySelectedTrack: PropTypes.func,
   dispatchPauseSelectedTrack: PropTypes.func,
   isPlaying: PropTypes.bool,
-  selectedTrack: PropTypes.object,
   onClick: PropTypes.func
 };
 
-const mapStateToProps = state => ({
-  isPlaying: state.isPlaying,
-  selectedTrack: state.selectedTrack
-});
-
-const mapDispatchToProps = dispatch => ({
-  dispatchPlaySelectedTrack: () => dispatch(playSelectedTrack()),
-  dispatchPauseSelectedtrack: () => dispatch(pauseSelectedTrack())
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PlayPauseButton);
+export default PlayPauseButton;
