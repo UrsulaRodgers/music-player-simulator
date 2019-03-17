@@ -6,8 +6,7 @@ export const initialState = {
   trackIndex: null,
   isPlaying: false,
   timerStart: false,
-  count: 0,
-  paused: false
+  count: 0
 };
 
 export default (state = initialState, action) => {
