@@ -7,8 +7,8 @@ import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../assets/baseline-pause-24px.svg";
 
-const renderIcon = (selected, isPlaying) =>
-  selected && isPlaying ? (
+const renderIcon = (selected, isPaused) =>
+  selected && !isPaused ? (
     <img src={pauseIcon} alt="pause-icon" data-testid="pause-icon" />
   ) : (
     <img src={playIcon} alt="play-icon" data-testid="play-icon" />
@@ -24,7 +24,7 @@ const TrackItem = props => {
     testID,
     onClick,
     selected,
-    isPlaying
+    isPaused
   } = props;
   return (
     <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
@@ -45,7 +45,7 @@ const TrackItem = props => {
           </p>
         </Grid>
         <Grid item xs={2} className="trackitem_icon">
-          {renderIcon(selected, isPlaying)}
+          {renderIcon(selected, isPaused)}
         </Grid>
       </Grid>
     </TrackItemWrapper>
@@ -54,19 +54,19 @@ const TrackItem = props => {
 
 TrackItem.propTypes = {
   selectedTrack: PropTypes.object,
-  isPlaying: PropTypes.bool,
   trackNumber: PropTypes.number,
   title: PropTypes.string,
   artist: PropTypes.string,
   album: PropTypes.string,
   testID: PropTypes.string,
   onClick: PropTypes.func,
-  selected: PropTypes.bool
+  selected: PropTypes.bool,
+  isPaused: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
   selectedTrack: state.selectedTrack,
-  isPlaying: state.isPlaying
+  isPaused: state.paused
 });
 
 export default connect(mapStateToProps)(TrackItem);

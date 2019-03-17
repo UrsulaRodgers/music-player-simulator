@@ -55,7 +55,8 @@ const mapStateToProps = state => ({
   index: state.trackIndex,
   selectedTrack: state.selectedTrack,
   isPlaying: state.isPlaying,
-  count: state.count
+  count: state.count,
+  isPaused: state.paused
 });
 
 const mapDispatchToProps = dispatch => ({

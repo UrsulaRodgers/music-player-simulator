@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { playList } from "../../../../data";
-import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
+import { selectTrack } from "../../../../store/actions";
 import { Grid } from "../../../../components_shared";
 import { TrackItem } from "./components";
 
@@ -30,14 +30,8 @@ const renderPlayList = (playList, props) =>
   ));
 
 const handleClick = (index, props) => {
-  const {
-    dispatchSelectedTrack,
-    dispatchPauseSelectedTrack,
-    isPlaying
-  } = props;
-  return isPlaying
-    ? dispatchPauseSelectedTrack()
-    : dispatchSelectedTrack(index);
+  const { dispatchSelectedTrack } = props;
+  return dispatchSelectedTrack(index);
 };
 
 const SongList = props => (
@@ -55,21 +49,17 @@ const SongList = props => (
 
 SongList.propTypes = {
   dispatchSelectedTrack: PropTypes.func,
-  dispatchPauseSelectedTrack: PropTypes.func,
   selectedTrack: PropTypes.object,
-  currentTrackIndex: PropTypes.number,
-  isPlaying: PropTypes.bool
+  currentTrackIndex: PropTypes.number
 };
 
 const mapStateToProps = state => ({
   selectedTrack: state.selectedTrack,
-  currentTrackIndex: state.trackIndex,
-  isPlaying: state.isPlaying
+  currentTrackIndex: state.trackIndex
 });
 
 const mapDispatchToProps = dispatch => ({
-  dispatchSelectedTrack: index => dispatch(selectTrack(index)),
-  dispatchPauseSelectedTrack: () => dispatch(pauseSelectedTrack())
+  dispatchSelectedTrack: index => dispatch(selectTrack(index))
 });
 
 export default connect(

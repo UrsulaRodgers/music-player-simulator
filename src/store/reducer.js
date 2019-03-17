@@ -6,7 +6,8 @@ export const initialState = {
   trackIndex: null,
   isPlaying: false,
   timerStart: false,
-  count: 0
+  count: 0,
+  paused: false
 };
 
 export default (state = initialState, action) => {
@@ -20,7 +21,8 @@ export default (state = initialState, action) => {
     case actionTypes.PLAY_SELECTED_TRACK:
       return {
         ...state,
-        isPlaying: true
+        isPlaying: true,
+        paused: false
       };
     case actionTypes.TIMER_START:
       return {
@@ -40,7 +42,7 @@ export default (state = initialState, action) => {
     case actionTypes.PAUSE_SELECTED_TRACK:
       return {
         ...state,
-        isPlaying: false
+        paused: true
       };
     case actionTypes.PLAY_NEXT_TRACK:
       return {
