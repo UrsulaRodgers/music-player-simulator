@@ -9,7 +9,7 @@ export const playList = [
     artist: "Agnes Obel",
     album: "Citizen of Glass",
     year: "2016",
-    length: "3:56",
+    length: "00:00:20",
     albumArt: CitizenOfGlass
   },
   {
@@ -17,7 +17,7 @@ export const playList = [
     artist: "Arcade Fire",
     album: "The Suburbs",
     year: "2010",
-    length: "5:25",
+    length: "00:05:25",
     albumArt: TheSuburbs
   },
   {
@@ -25,7 +25,7 @@ export const playList = [
     artist: "Apparat",
     album: "The Devil's Walk",
     year: "2011",
-    length: "4:29",
+    length: "00:04:29",
     albumArt: TheDevilsWalk
   },
   {
@@ -33,7 +33,7 @@ export const playList = [
     artist: "iamamiwhoami",
     album: "Blue",
     year: "2014",
-    length: "5:02",
+    length: "00:05:02",
     albumArt: Blue
   }
 ];

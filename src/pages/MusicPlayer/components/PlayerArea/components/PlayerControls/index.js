@@ -6,7 +6,10 @@ import {
   playNextTrack,
   playPrevTrack,
   playSelectedTrack,
-  pauseSelectedTrack
+  pauseSelectedTrack,
+  resetPlay,
+  resumeTimer,
+  pauseTimer
 } from "../../../../../../store/actions";
 import {
   PlayPauseButton,
@@ -16,7 +19,7 @@ import {
 } from "./components";
 
 const PlayerControls = props => {
-  const { selectedTrack } = props;
+  const { selectedTrack, count } = props;
 
   return (
     selectedTrack && (
@@ -27,7 +30,7 @@ const PlayerControls = props => {
           <NextButton {...props} />
         </Grid>
         <Grid item xs={12}>
-          <PlayProgress selectedTrack={selectedTrack} />
+          <PlayProgress selectedTrack={selectedTrack} count={count} />
         </Grid>
       </Grid>
     )
@@ -38,23 +41,31 @@ PlayerControls.propTypes = {
   selectedTrack: PropTypes.object,
   index: PropTypes.number,
   isPlaying: PropTypes.bool,
+  count: PropTypes.number,
   dispatchPlayNextTrack: PropTypes.func,
   dispatchPlayPrevTrack: PropTypes.func,
   dispatchPlaySelectedTrack: PropTypes.func,
-  dispatchPauseSelectedtrack: PropTypes.func
+  dispatchPauseSelectedtrack: PropTypes.func,
+  dispatchPauseTimer: PropTypes.func,
+  dispatchResumeTimer: PropTypes.func,
+  dispatchResetPlay: PropTypes.func
 };
 
 const mapStateToProps = state => ({
   index: state.trackIndex,
   selectedTrack: state.selectedTrack,
-  isPlaying: state.isPlaying
+  isPlaying: state.isPlaying,
+  count: state.count
 });
 
 const mapDispatchToProps = dispatch => ({
   dispatchPlayNextTrack: () => dispatch(playNextTrack()),
   dispatchPlayPrevTrack: () => dispatch(playPrevTrack()),
   dispatchPlaySelectedTrack: () => dispatch(playSelectedTrack()),
-  dispatchPauseSelectedtrack: () => dispatch(pauseSelectedTrack())
+  dispatchPauseSelectedtrack: () => dispatch(pauseSelectedTrack()),
+  dispatchPauseTimer: () => dispatch(pauseTimer()),
+  dispatchResumeTimer: () => dispatch(resumeTimer()),
+  dispatchResetPlay: () => dispatch(resetPlay())
 });
 
 export default connect(

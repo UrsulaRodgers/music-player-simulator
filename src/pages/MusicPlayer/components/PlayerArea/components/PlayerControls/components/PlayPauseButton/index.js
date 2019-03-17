@@ -4,38 +4,31 @@ import { Button } from "../../../../../../../../components_shared";
 import playIcon from "../../../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../../../assets/baseline-pause-24px.svg";
 
-const renderPlayButton = dispatchPlaySelectedTrack => (
-  <Button onClick={() => dispatchPlaySelectedTrack()} data-testid="play-button">
+const renderPlayButton = dispatchResumeTimer => (
+  <Button onClick={() => dispatchResumeTimer()} data-testid="play-button">
     <img className="large_button-icon" src={playIcon} alt="play-button" />
   </Button>
 );
 
-const renderPauseButton = dispatchPauseSelectedTrack => (
-  <Button
-    onClick={() => dispatchPauseSelectedTrack()}
-    data-testid="pause-button"
-  >
+const renderPauseButton = dispatchPauseTimer => (
+  <Button onClick={() => dispatchPauseTimer()} data-testid="pause-button">
     <img className="large_button-icon" src={pauseIcon} alt="pause-button" />
   </Button>
 );
 
 const PlayPauseButton = props => {
-  const {
-    dispatchPlaySelectedTrack,
-    dispatchPauseSelectedtrack,
-    isPlaying
-  } = props;
+  const { dispatchPauseTimer, isPlaying, dispatchResumeTimer } = props;
 
   return isPlaying
-    ? renderPauseButton(dispatchPauseSelectedtrack)
-    : renderPlayButton(dispatchPlaySelectedTrack);
+    ? renderPauseButton(dispatchPauseTimer)
+    : renderPlayButton(dispatchResumeTimer);
 };
 
 PlayPauseButton.propTypes = {
-  dispatchPlaySelectedTrack: PropTypes.func,
-  dispatchPauseSelectedTrack: PropTypes.func,
   isPlaying: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  dispatchPauseTimer: PropTypes.func,
+  dispatchResumeTimer: PropTypes.func
 };
 
 export default PlayPauseButton;

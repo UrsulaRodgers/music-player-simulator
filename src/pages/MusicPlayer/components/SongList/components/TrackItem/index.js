@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import formatDuration from "format-duration";
 import { Grid } from "../../../../../../components_shared";
 import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
@@ -25,7 +26,6 @@ const TrackItem = props => {
     selected,
     isPlaying
   } = props;
-
   return (
     <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
       <Grid container justify="space-between" alignItems="center">
@@ -41,7 +41,7 @@ const TrackItem = props => {
         </Grid>
         <Grid item xs={2} className="trackitem_duration">
           <p className="trackitem_duration_text" data-testid="track-duration">
-            {duration}
+            {formatDuration(duration)}
           </p>
         </Grid>
         <Grid item xs={2} className="trackitem_icon">

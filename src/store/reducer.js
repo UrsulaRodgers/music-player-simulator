@@ -4,7 +4,9 @@ import { playList } from "../data";
 export const initialState = {
   selectedTrack: null,
   trackIndex: null,
-  isPlaying: false
+  isPlaying: false,
+  timerStart: false,
+  count: 0
 };
 
 export default (state = initialState, action) => {
@@ -20,6 +22,21 @@ export default (state = initialState, action) => {
         ...state,
         isPlaying: true
       };
+    case actionTypes.TIMER_START:
+      return {
+        ...state,
+        timerStart: true
+      };
+    case actionTypes.TIMER_TICK:
+      return {
+        ...state,
+        count: state.count + 1000
+      };
+    case actionTypes.TIMER_RESET:
+      return {
+        ...state,
+        count: 0
+      };
     case actionTypes.PAUSE_SELECTED_TRACK:
       return {
         ...state,
@@ -30,14 +47,22 @@ export default (state = initialState, action) => {
         ...state,
         trackIndex: state.trackIndex + 1,
         selectedTrack: playList[state.trackIndex + 1],
-        isPlaying: true
+        isPlaying: true,
+        count: 0
       };
     case actionTypes.PLAY_PREV_TRACK:
       return {
         ...state,
         trackIndex: state.trackIndex - 1,
         selectedTrack: playList[state.trackIndex - 1],
-        isPlaying: true
+        isPlaying: true,
+        count: 0
+      };
+    case actionTypes.RESET_PLAY:
+      return {
+        ...state,
+        isPlaying: false,
+        count: 0
       };
     default:
       return state;

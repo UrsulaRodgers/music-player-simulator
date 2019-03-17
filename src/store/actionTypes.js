@@ -3,3 +3,7 @@ export const PLAY_SELECTED_TRACK = "PLAY_SELECTED_TRACK";
 export const PAUSE_SELECTED_TRACK = "PAUSE_SELECTED_TRACK";
 export const PLAY_NEXT_TRACK = "PLAY_NEXT_TRACK";
 export const PLAY_PREV_TRACK = "PLAY_PREV_TRACK";
+export const RESET_PLAY = "RESET_PLAY";
+export const TIMER_START = "TIMER_START";
+export const TIMER_TICK = "TIMER_TICK";
+export const TIMER_RESET = "TIMER_RESET";

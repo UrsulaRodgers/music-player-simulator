@@ -6,13 +6,21 @@ import { selectTrack, pauseSelectedTrack } from "../../../../store/actions";
 import { Grid } from "../../../../components_shared";
 import { TrackItem } from "./components";
 
+const renderDuration = duration => {
+  const splitDuration = duration.split(":");
+  const seconds =
+    +splitDuration[0] * 60 * 60 + +splitDuration[1] * 60 + +splitDuration[2];
+  const ms = seconds * 1000;
+  return ms;
+};
+
 const renderPlayList = (playList, props) =>
   playList.map((track, index) => (
     <TrackItem
       trackNumber={index + 1}
       key={track.album}
       title={track.title}
-      duration={track.length}
+      duration={renderDuration(track.length)}
       artist={track.artist}
       album={track.album}
       testID="track-item"
@@ -27,7 +35,6 @@ const handleClick = (index, props) => {
     dispatchPauseSelectedTrack,
     isPlaying
   } = props;
-
   return isPlaying
     ? dispatchPauseSelectedTrack()
     : dispatchSelectedTrack(index);
