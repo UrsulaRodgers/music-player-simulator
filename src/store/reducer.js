@@ -21,8 +21,7 @@ export default (state = initialState, action) => {
     case actionTypes.PLAY_SELECTED_TRACK:
       return {
         ...state,
-        isPlaying: true,
-        paused: false
+        isPlaying: true
       };
     case actionTypes.TIMER_START:
       return {
@@ -42,7 +41,7 @@ export default (state = initialState, action) => {
     case actionTypes.PAUSE_SELECTED_TRACK:
       return {
         ...state,
-        paused: true
+        isPlaying: false
       };
     case actionTypes.PLAY_NEXT_TRACK:
       return {

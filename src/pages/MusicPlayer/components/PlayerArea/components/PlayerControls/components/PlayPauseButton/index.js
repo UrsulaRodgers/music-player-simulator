@@ -17,15 +17,15 @@ const renderPauseButton = dispatchPauseTimer => (
 );
 
 const PlayPauseButton = props => {
-  const { dispatchPauseTimer, isPaused, dispatchResumeTimer } = props;
+  const { dispatchPauseTimer, isPlaying, dispatchResumeTimer } = props;
 
-  return isPaused
-    ? renderPlayButton(dispatchResumeTimer)
-    : renderPauseButton(dispatchPauseTimer);
+  return isPlaying
+    ? renderPauseButton(dispatchPauseTimer)
+    : renderPlayButton(dispatchResumeTimer);
 };
 
 PlayPauseButton.propTypes = {
-  isPaused: PropTypes.bool,
+  isPlaying: PropTypes.bool,
   onClick: PropTypes.func,
   dispatchPauseTimer: PropTypes.func,
   dispatchResumeTimer: PropTypes.func

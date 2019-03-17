@@ -7,8 +7,8 @@ import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
 import pauseIcon from "../../../../assets/baseline-pause-24px.svg";
 
-const renderIcon = (selected, isPaused) =>
-  selected && !isPaused ? (
+const renderIcon = (selected, isPlaying) =>
+  selected && isPlaying ? (
     <img src={pauseIcon} alt="pause-icon" data-testid="pause-icon" />
   ) : (
     <img src={playIcon} alt="play-icon" data-testid="play-icon" />
@@ -24,7 +24,7 @@ const TrackItem = props => {
     testID,
     onClick,
     selected,
-    isPaused
+    isPlaying
   } = props;
   return (
     <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
@@ -45,7 +45,7 @@ const TrackItem = props => {
           </p>
         </Grid>
         <Grid item xs={2} className="trackitem_icon">
-          {renderIcon(selected, isPaused)}
+          {renderIcon(selected, isPlaying)}
         </Grid>
       </Grid>
     </TrackItemWrapper>
@@ -61,12 +61,12 @@ TrackItem.propTypes = {
   testID: PropTypes.string,
   onClick: PropTypes.func,
   selected: PropTypes.bool,
-  isPaused: PropTypes.bool
+  isPlaying: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
   selectedTrack: state.selectedTrack,
-  isPaused: state.paused
+  isPlaying: state.isPlaying
 });
 
 export default connect(mapStateToProps)(TrackItem);
