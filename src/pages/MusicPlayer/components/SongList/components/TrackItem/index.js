@@ -5,11 +5,11 @@ import formatDuration from "format-duration";
 import { Grid } from "../../../../../../components_shared";
 import TrackItemWrapper from "../TrackItemWrapper";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
-import pauseIcon from "../../../../assets/baseline-pause-24px.svg";
+import replayIcon from "../../../../assets/baseline-replay-24px.svg";
 
 const renderIcon = (selected, isPlaying) =>
   selected && isPlaying ? (
-    <img src={pauseIcon} alt="pause-icon" data-testid="pause-icon" />
+    <img src={replayIcon} alt="replay-icon" data-testid="replay-icon" />
   ) : (
     <img src={playIcon} alt="play-icon" data-testid="play-icon" />
   );

@@ -31,11 +31,11 @@ describe("<SongList />", () => {
     const { getByTestId } = renderSongList();
     expect(getByTestId("play-icon")).toBeInTheDocument();
   });
-  it("renders a pause icon when a track is playing", async () => {
+  it("renders a replay icon when a track is playing", async () => {
     const { getByTestId } = renderSongList();
     const TrackItem = getByTestId("track-item");
     fireEvent.click(TrackItem);
-    const pauseIcon = await waitForElement(() => getByTestId("pause-icon"));
-    expect(pauseIcon).toBeInTheDocument();
+    const replayIcon = await waitForElement(() => getByTestId("replay-icon"));
+    expect(replayIcon).toBeInTheDocument();
   });
 });
