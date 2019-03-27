@@ -1,4 +1,5 @@
 import * as actionTypes from "./actionTypes";
+import { renderDuration } from "../utils/timer";
 
 let timer = null;
 
@@ -29,10 +30,7 @@ const tick = () => {
   return (dispatch, getState) => {
     const duration = getState().selectedTrack.length;
     const count = getState().count;
-    const splitDuration = duration.split(":");
-    const durationSeconds =
-      +splitDuration[0] * 60 * 60 + +splitDuration[1] * 60 + +splitDuration[2];
-    const durationMs = durationSeconds * 1000;
+    const durationMs = renderDuration(duration);
     if (count < durationMs) {
       dispatch({ type: actionTypes.TIMER_TICK });
     } else {
@@ -52,7 +50,7 @@ export const pauseTimer = () => {
 export const resumeTimer = () => {
   return dispatch => {
     dispatch(playSelectedTrack());
-    dispatch(startTimer());
+    // dispatch(startTimer());
   };
 };
 

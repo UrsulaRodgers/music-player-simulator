@@ -2,17 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { playList } from "../../../../data";
+import { renderDuration } from "../../../../utils/timer";
 import { selectTrack } from "../../../../store/actions";
 import { Grid } from "../../../../components_shared";
 import { TrackItem } from "./components";
-
-const renderDuration = duration => {
-  const splitDuration = duration.split(":");
-  const seconds =
-    +splitDuration[0] * 60 * 60 + +splitDuration[1] * 60 + +splitDuration[2];
-  const ms = seconds * 1000;
-  return ms;
-};
 
 const renderPlayList = (playList, props) =>
   playList.map((track, index) => (
