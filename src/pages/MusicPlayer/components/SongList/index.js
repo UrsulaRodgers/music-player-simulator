@@ -42,12 +42,10 @@ const SongList = props => (
 
 SongList.propTypes = {
   dispatchSelectedTrack: PropTypes.func,
-  selectedTrack: PropTypes.object,
   currentTrackIndex: PropTypes.number
 };
 
 const mapStateToProps = state => ({
-  selectedTrack: state.selectedTrack,
   currentTrackIndex: state.trackIndex
 });
 

@@ -50,7 +50,6 @@ export const pauseTimer = () => {
 export const resumeTimer = () => {
   return dispatch => {
     dispatch(playSelectedTrack());
-    // dispatch(startTimer());
   };
 };
 
