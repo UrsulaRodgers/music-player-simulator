@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import formatDuration from "format-duration";
 import { Grid } from "../../../../../../components_shared";
-import TrackItemWrapper from "../TrackItemWrapper";
+import StyledDiv from "../StyledDiv";
 import playIcon from "../../../../assets/baseline-play_circle_outline-24px.svg";
 import replayIcon from "../../../../assets/baseline-replay-24px.svg";
 
@@ -27,7 +27,7 @@ const TrackItem = props => {
     isPlaying
   } = props;
   return (
-    <TrackItemWrapper testID={testID} onClick={onClick} selected={selected}>
+    <StyledDiv testID={testID} onClick={onClick} selected={selected}>
       <Grid container justify="space-between" alignItems="center">
         <Grid item xs={8}>
           <p className="trackitem_title">
@@ -48,7 +48,7 @@ const TrackItem = props => {
           {renderIcon(selected, isPlaying)}
         </Grid>
       </Grid>
-    </TrackItemWrapper>
+    </StyledDiv>
   );
 };
 

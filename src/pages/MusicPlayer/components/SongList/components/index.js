@@ -1,2 +1,2 @@
 export { default as TrackItem } from "./TrackItem";
-export { default as TrackItemWrapper } from "./TrackItemWrapper";
+export { default as StyledDiv } from "./StyledDiv";
