@@ -27,7 +27,7 @@ const TrackItem = props => {
     isPlaying
   } = props;
   return (
-    <StyledDiv testID={testID} onClick={onClick} selected={selected}>
+    <StyledDiv data-testid={testID} onClick={onClick} selected={selected}>
       <Grid container justify="space-between" alignItems="center">
         <Grid item xs={8}>
           <p className="trackitem_title">

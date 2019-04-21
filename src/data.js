@@ -33,7 +33,7 @@ export const playList = [
     artist: "iamamiwhoami",
     album: "Blue",
     year: "2014",
-    length: "00:05:02",
+    length: "00:00:10",
     albumArt: Blue
   }
 ];

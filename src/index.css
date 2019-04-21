@@ -1,46 +1,35 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(#3d4044, #797a7c);
-}
+  background-image: linear-gradient(#3d4044, #797a7c); }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 .header {
   color: #ffffff;
   font-size: 30px;
   line-height: 33px;
-  text-align: center;
-}
+  text-align: center; }
 
 .pagewrapper {
-  min-height: 100vh;
-}
+  min-height: 100vh; }
 
 .songlist_pagelayout {
   border-right: 2px solid #d61515;
-  min-height: 100vh;
-}
-@media (max-width: 1000px) {
-  .songlist_pagelayout {
-    border: none;
-    min-height: 50vh;
-  }
-}
+  min-height: 100vh; }
+  @media (max-width: 1000px) {
+    .songlist_pagelayout {
+      border: none;
+      min-height: 50vh; } }
 
 .songlist_title {
   text-align: center;
   padding: 10px;
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
 .playerarea_pagelayout {
   min-height: 100vh;
@@ -48,20 +37,16 @@ code {
   align-items: center;
   justify-content: space-evenly;
   direction: column;
-  padding-top: 50px;
-}
-@media (max-width: 1000px) {
-  .playerarea_pagelayout {
-    padding-top: 0;
-  }
-}
+  padding-top: 50px; }
+  @media (max-width: 1000px) {
+    .playerarea_pagelayout {
+      padding-top: 0; } }
 
 .trackitem_title {
   color: #ffffff;
   font-size: 16px;
   line-height: 18px;
-  margin: 0 0 10px 0;
-}
+  margin: 0 0 10px 0; }
 
 .trackitem_moreinformation {
   color: #ffffff;
@@ -70,80 +55,60 @@ code {
   margin: 0;
   display: flex;
   direction: row;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 .trackitem_icon .trackitem_duration {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .trackitem_duration_text {
   color: #ffffff;
   font-size: 16px;
-  line-height: 18px;
-}
+  line-height: 18px; }
 
 .currentttrack_wrapper {
-  text-align: center;
-}
+  text-align: center; }
 
 .currenttrack_songtitle {
   color: #ffffff;
   font-size: 16px;
   line-height: 18px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .currenttrack_albumart {
   width: 300px;
   height: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
-}
-@media (max-width: 1000px) {
-  .currenttrack_albumart {
-    width: 250px;
-    height: auto;
-  }
-}
+  margin-bottom: 20px; }
+  @media (max-width: 1000px) {
+    .currenttrack_albumart {
+      width: 250px;
+      height: auto; } }
 
 .currenttrack_artist_album {
   color: #ffffff;
   font-size: 16px;
   line-height: 18px;
-  margin-bottom: 40px;
-}
+  margin-bottom: 40px; }
 
 .playercontrols {
   width: 50%;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .large_button-icon {
   width: 90%;
-  height: auto;
-}
+  height: auto; }
 
 .small_button-icon {
   width: 80%;
-  height: auto;
-}
-
-.small_button-icon-disabled {
-  width: 80%;
-  height: auto;
-  opacity: 0.5;
-}
+  height: auto; }
 
 .playercontrols_play_progress {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .playprogress_text {
   color: #ffffff;
   font-size: 16px;
-  line-height: 18px;
-}
+  line-height: 18px; }

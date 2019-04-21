@@ -4,7 +4,6 @@ import { Grid } from "../../../../../../components_shared";
 
 const CurrentTrack = props => {
   const { selectedTrack, index } = props;
-
   return (
     selectedTrack && (
       <Grid className="currentttrack_wrapper" item>

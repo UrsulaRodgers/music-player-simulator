@@ -16,38 +16,6 @@ const playListLastItem = playList.length - 1;
 afterEach(cleanup);
 
 describe("<PlayerArea />", () => {
-  it("renders a 'Now Playing' title", async () => {
-    const { getByText, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const nowPlaying = await waitForElement(() => getByText(/now playing/i));
-    expect(nowPlaying).toBeInTheDocument();
-  });
-  it("renders album art", async () => {
-    const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const albumArt = await waitForElement(() => getByTestId("album-art"));
-    expect(albumArt).toBeInTheDocument();
-  });
-  it("renders a track title", async () => {
-    const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const trackTitle = await waitForElement(() =>
-      getByTestId("track-title", { exact: false })
-    );
-    expect(trackTitle).toBeInTheDocument();
-  });
-  it("renders artist and album text", async () => {
-    const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const artistAlbum = await waitForElement(() => getByTestId("artist-album"));
-    expect(artistAlbum).toBeInTheDocument();
-  });
-  it("renders a previous track button", async () => {
-    const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const prevButton = await waitForElement(() => getByTestId("prev-button"));
-    expect(prevButton).toBeInTheDocument();
-  });
   it("selects the previous track when the previous button is clicked", async () => {
     const { getByTestId, store } = renderPlayerArea();
     store.dispatch(selectTrack(playListItem));
@@ -57,15 +25,6 @@ describe("<PlayerArea />", () => {
       getByTestId(`track-title-${playListItem - 1}`)
     );
     expect(prevTrack).toBeInTheDocument();
-  });
-  it("does not select a previous track when the previous button is disabled", async () => {
-    const { getByTestId, queryByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(0));
-    const prevButton = await waitForElement(() =>
-      getByTestId("prev-button-disabled")
-    );
-    fireEvent.click(prevButton);
-    expect(queryByTestId("track-title--1")).toBeNull();
   });
   it("renders a pause button when a track is playing", async () => {
     const { getByTestId, store } = renderPlayerArea();
@@ -81,12 +40,6 @@ describe("<PlayerArea />", () => {
     const playButton = await waitForElement(() => getByTestId("play-button"));
     expect(playButton).toBeInTheDocument();
   });
-  it("renders a next button", async () => {
-    const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const nextButton = await waitForElement(() => getByTestId("next-button"));
-    expect(nextButton).toBeInTheDocument();
-  });
   it("selects the next track when the next button is clicked", async () => {
     const { getByTestId, store } = renderPlayerArea();
     store.dispatch(selectTrack(playListItem));
@@ -97,21 +50,22 @@ describe("<PlayerArea />", () => {
     );
     expect(nextTrack).toBeInTheDocument();
   });
-  it("does not select the next track when the next button is disabled", async () => {
-    const { getByTestId, queryByTestId, store } = renderPlayerArea();
+  it("selects the first track of the playlist when the next button is clicked while the last track is playing", async () => {
+    const { getByTestId, store } = renderPlayerArea();
     store.dispatch(selectTrack(playListLastItem));
     const nextButton = await waitForElement(() =>
-      getByTestId("next-button-disabled")
+      getByTestId("next-button-last")
     );
     fireEvent.click(nextButton);
-    expect(queryByTestId("track-title-4")).toBeNull();
+    expect(getByTestId("track-title", { exact: false })).toBeInTheDocument();
   });
-  it("renders track progress", async () => {
+  it("selects the last track of the playlist when the prev button is clicked while the first track is playing", async () => {
     const { getByTestId, store } = renderPlayerArea();
-    store.dispatch(selectTrack(playListItem));
-    const trackProgress = await waitForElement(() =>
-      getByTestId("track-progress")
+    store.dispatch(selectTrack(0));
+    const prevButton = await waitForElement(() =>
+      getByTestId("prev-button-first")
     );
-    expect(trackProgress).toBeInTheDocument();
+    fireEvent.click(prevButton);
+    expect(getByTestId("track-title-3")).toBeInTheDocument();
   });
 });

@@ -5,7 +5,7 @@ import nextIcon from "../../../../../../assets/baseline-fast_forward-24px.svg";
 import { playList } from "../../../../../../../../data";
 
 const NextButton = props => {
-  const { dispatchPlayNextTrack, index } = props;
+  const { dispatchPlayNextTrack, dispatchRestartPlayList, index } = props;
 
   return index < playList.length - 1 ? (
     <Button
@@ -15,9 +15,10 @@ const NextButton = props => {
       <img className="small_button-icon" src={nextIcon} alt="next-button" />
     </Button>
   ) : (
-    <Button disabled data-testid="next-button-disabled">
+    <Button data-testid="next-button-last">
       <img
-        className="small_button-icon-disabled"
+        className="small_button-icon"
+        onClick={() => dispatchRestartPlayList()}
         src={nextIcon}
         alt="next-button"
       />

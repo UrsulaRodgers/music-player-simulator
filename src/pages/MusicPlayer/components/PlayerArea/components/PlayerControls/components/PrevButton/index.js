@@ -4,7 +4,7 @@ import { Button } from "../../../../../../../../components_shared";
 import prevIcon from "../../../../../../assets/baseline-fast_rewind-24px.svg";
 
 const PrevButton = props => {
-  const { dispatchPlayPrevTrack, index } = props;
+  const { dispatchPlayPrevTrack, dispatchPlayLastTrack, index } = props;
 
   return index > 0 ? (
     <Button
@@ -14,12 +14,11 @@ const PrevButton = props => {
       <img className="small_button-icon" src={prevIcon} alt="prev-button" />
     </Button>
   ) : (
-    <Button disabled data-testid="prev-button-disabled">
-      <img
-        className="small_button-icon-disabled"
-        src={prevIcon}
-        alt="prev-button"
-      />
+    <Button
+      onClick={() => dispatchPlayLastTrack()}
+      data-testid="prev-button-first"
+    >
+      <img className="small_button-icon" src={prevIcon} alt="prev-button" />
     </Button>
   );
 };

@@ -1,5 +1,6 @@
 import * as actionTypes from "./actionTypes";
 import { renderDuration } from "../utils/timer";
+import { playList } from "../data";
 
 let timer = null;
 
@@ -30,12 +31,16 @@ const tick = () => {
   return (dispatch, getState) => {
     const duration = getState().selectedTrack.length;
     const count = getState().count;
+    const trackIndex = getState().trackIndex;
     const durationMs = renderDuration(duration);
     if (count < durationMs) {
       dispatch({ type: actionTypes.TIMER_TICK });
+    } else if (trackIndex < playList.length - 1) {
+      dispatch(playNextTrack());
     } else {
-      clearInterval(timer);
-      dispatch(resetPlay());
+      trackIndex === playList.length - 1
+        ? dispatch(restartPlayList())
+        : dispatch(resetPlay());
     }
   };
 };
@@ -52,6 +57,14 @@ export const resumeTimer = () => {
     dispatch(playSelectedTrack());
   };
 };
+
+export const restartPlayList = () => ({
+  type: actionTypes.RESTART_PLAY
+});
+
+export const playLastTrack = () => ({
+  type: actionTypes.PLAY_LAST_TRACK
+});
 
 export const resetPlay = () => ({
   type: actionTypes.RESET_PLAY

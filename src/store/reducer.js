@@ -25,7 +25,8 @@ export default (state = initialState, action) => {
     case actionTypes.TIMER_START:
       return {
         ...state,
-        timerStart: true
+        timerStart: true,
+        count: 0
       };
     case actionTypes.TIMER_TICK:
       return {
@@ -62,6 +63,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isPlaying: false,
+        count: 0
+      };
+    case actionTypes.RESTART_PLAY:
+      return {
+        ...state,
+        isPlaying: true,
+        selectedTrack: playList[0],
+        trackIndex: 0,
+        count: 0
+      };
+    case actionTypes.PLAY_LAST_TRACK:
+      return {
+        ...state,
+        isPlaying: true,
+        selectedTrack: playList[playList.length - 1],
+        trackIndex: playList.length - 1,
         count: 0
       };
     default:

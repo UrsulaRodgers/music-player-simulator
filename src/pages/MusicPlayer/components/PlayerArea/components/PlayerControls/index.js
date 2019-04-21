@@ -8,6 +8,8 @@ import {
   playSelectedTrack,
   pauseSelectedTrack,
   resetPlay,
+  restartPlayList,
+  playLastTrack,
   resumeTimer,
   pauseTimer
 } from "../../../../../../store/actions";
@@ -48,7 +50,9 @@ PlayerControls.propTypes = {
   dispatchPauseSelectedtrack: PropTypes.func,
   dispatchPauseTimer: PropTypes.func,
   dispatchResumeTimer: PropTypes.func,
-  dispatchResetPlay: PropTypes.func
+  dispatchResetPlay: PropTypes.func,
+  dispatchRestartPlayList: PropTypes.func,
+  dispatchPlayLastTrack: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -66,7 +70,9 @@ const mapDispatchToProps = dispatch => ({
   dispatchPauseSelectedtrack: () => dispatch(pauseSelectedTrack()),
   dispatchPauseTimer: () => dispatch(pauseTimer()),
   dispatchResumeTimer: () => dispatch(resumeTimer()),
-  dispatchResetPlay: () => dispatch(resetPlay())
+  dispatchResetPlay: () => dispatch(resetPlay()),
+  dispatchRestartPlayList: () => dispatch(restartPlayList()),
+  dispatchPlayLastTrack: () => dispatch(playLastTrack())
 });
 
 export default connect(
